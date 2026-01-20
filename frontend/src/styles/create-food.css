@@ -1,0 +1,113 @@
+/* ---------- PAGE ---------- */
+.create-food-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f172a; /* dark slate */
+  padding: 24px;
+}
+
+/* ---------- FORM CARD ---------- */
+.create-food-form {
+  width: 100%;
+  max-width: 480px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- INPUTS ---------- */
+.create-food-form input,
+.create-food-form textarea {
+  width: 100%;
+  background: #020617;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+}
+
+.create-food-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.create-food-form input::placeholder,
+.create-food-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+.create-food-form input:focus,
+.create-food-form textarea:focus {
+  border-color: #6366f1;
+}
+
+/* ---------- FILE DROPZONE ---------- */
+.file-dropzone {
+  border: 2px dashed #334155;
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  color: #cbd5f5;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.file-dropzone:hover {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+}
+
+/* ---------- ERROR ---------- */
+.error-text {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: -6px;
+}
+
+/* ---------- VIDEO PREVIEW ---------- */
+.video-preview {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+}
+
+.video-preview video {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+}
+
+/* ---------- BUTTON ---------- */
+.create-food-form button {
+  margin-top: 8px;
+  background: #6366f1;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.create-food-form button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.create-food-form button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.create-food-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
