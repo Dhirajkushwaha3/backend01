@@ -27,7 +27,8 @@ const Profile = () => {
             try {
                     const token = localStorage.getItem('token');
                     const headers = token ? { Authorization: `Bearer ${token}` } : {};
-                    const { data } = await axios.get(`https://food-scroll-iopy.onrender.com/api/food-partner/${id}`, {
+                    const API_BASE = import.meta.env.VITE_API_BASE_URL;
+                    const { data } = await axios.get(`${API_BASE}/api/food-partner/${id}`, {
                         withCredentials: true,
                         timeout: 10000,
                         headers
@@ -98,7 +99,8 @@ const Profile = () => {
                                     fd.append('avatar', f);
                                     const token = localStorage.getItem('token');
                                     const headers = token ? { Authorization: `Bearer ${token}` } : {};
-                                    const res = await axios.post(`http://localhost:3000/api/food-partner/${id}/avatar`, fd, {
+                                    const API_BASE = import.meta.env.VITE_API_BASE_URL;
+                                    const res = await axios.post(`${API_BASE}/api/food-partner/${id}/avatar`, fd, {
                                         withCredentials: true,
                                         timeout: 20000,
                                         headers
