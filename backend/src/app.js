@@ -14,7 +14,7 @@ app.use(cors({
    origin:[
       'http://localhost:5173',
       // TODO: replace with your actual deployed frontend domain
-      'https://backend001-frontend.onrender.com'
+      'https://food-scroll-frontend.onrender.com'
    ],
    credentials: true,
    allowedHeaders: ['Content-Type', 'Authorization'],
