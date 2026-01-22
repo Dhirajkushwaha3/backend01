@@ -14,7 +14,7 @@ const navigate = useNavigate();
     
 
    
-      const response = await axios.post("http://localhost:3000/api/auth/user/register", {
+      const response = await axios.post("https://backend001-6dig.onrender.com/api/auth/user/register", {
         name: name,
         email,
         password

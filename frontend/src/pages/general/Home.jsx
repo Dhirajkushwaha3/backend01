@@ -16,7 +16,7 @@ const Home = () => {
 
         const fetchReels = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/api/food', {
+                const response = await axios.get('https://backend001-6dig.onrender.com/api/food', {
                     withCredentials: true 
                 });
                 

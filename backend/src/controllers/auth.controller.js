@@ -30,7 +30,7 @@ async function registerUser(req, res) {
     id: user._id,
     email: user.email
   }, process.env.secretkey);
-  res.cookie('token', token, { httpOnly: true, sameSite: 'none', secure: false });
+  res.cookie('token', token, { httpOnly: true, sameSite: 'none', secure: true });
 
   res.status(201).json(({
     message:  'User registered successfully',
@@ -53,7 +53,7 @@ async function LoginUser(req, res) {
   })
 
   if (!user) {
-    res.status(404).json({
+    return res.status(404).json({
       message: 'Invalid email or password'
 
     })
@@ -70,10 +70,10 @@ async function LoginUser(req, res) {
     id: user._id,
     email: user.email
   }, process.env.secretkey);
-  res.cookie('token', token, { httpOnly: true, sameSite: 'lax', secure: false });
+  res.cookie('token', token, { httpOnly: true, sameSite: 'none', secure: true });
   res.status(200).json({
     message: 'User logged in successfully',
-    token,
+  
     user:{
       id: user._id,
       email: user.email,
@@ -85,7 +85,11 @@ async function LoginUser(req, res) {
 
 //coontroller for user logout
 async function LogoutUser(req, res) {
-  res.clearCookie('token');
+  res.clearCookie('token',{
+   httpOnly: true,
+    sameSite: 'none',
+    secure: true
+  });
   res.status(200).json({
    message: 'User Logged out successfully'
 
@@ -118,7 +122,7 @@ async function registerFoodPartner(req, res) {
         id: foodPartner._id,
         email: foodPartner.email
     }, process.env.secretkey);
-    res.cookie('token', token, { httpOnly: true, sameSite: 'none', secure: false });
+    res.cookie('token', token, { httpOnly: true, sameSite: 'none', secure: true });
     res.status(201).json({
       message: 'Food Partner registered successfully',
       token,
@@ -153,7 +157,7 @@ async function LoginFoodPartner(req, res) {
       id: foodPartner._id,
       email: foodPartner.email
     }, process.env.secretkey);
-    res.cookie('token', token, { httpOnly: true, sameSite: 'lax' , secure: false});
+    res.cookie('token', token, { httpOnly: true, sameSite: 'none' , secure: true});
     res.status(200).json({
       message: 'food partner logged in successfully',
       token,
@@ -168,9 +172,10 @@ async function LoginFoodPartner(req, res) {
 
 async function LogoutFoodPartner(req, res) { 
 
-  res.clearCookie('token');
-  res.status(200).json({
-    message: 'Food Partner Logged out successfully'
+  res.clearCookie('token',{
+    httpOnly: true,
+    sameSite: 'none',
+    secure: true
   });
 }
 

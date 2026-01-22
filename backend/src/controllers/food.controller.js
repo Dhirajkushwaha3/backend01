@@ -89,19 +89,6 @@ async function likeFood(req, res) {
 });
 }
 
-async function unlikeFood(req, res) {
-    const foodId =  req.body.foodId;
-    const unlike = await foodModel.findOneAndDelete({
-      user: req.user._id,
-      food: foodId
-    });
-
-    res.status(200).json({
-      message: 'Food unliked successfully',
-      unlike: unlike
-});
-}
-
 async function saveFood(req, res) {
    const {foodId} = req.body;
    const user = req.user;
@@ -138,6 +125,5 @@ module.exports = {
   createFood,
   getFoodItems,
   likeFood,
-  unlikeFood,
   saveFood
 }

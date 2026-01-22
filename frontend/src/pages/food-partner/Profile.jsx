@@ -27,7 +27,7 @@ const Profile = () => {
             try {
                     const token = localStorage.getItem('token');
                     const headers = token ? { Authorization: `Bearer ${token}` } : {};
-                    const { data } = await axios.get(`http://localhost:3000/api/food-partner/${id}`, {
+                    const { data } = await axios.get(`https://backend001-6dig.onrender.com/api/food-partner/${id}`, {
                         withCredentials: true,
                         timeout: 10000,
                         headers
