@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 //controller for user registration
 async function registerUser(req, res) {
-  const { fullName, email, password } = req.body;
+  const { name, email, password } = req.body;
 
   const isUserAlreadyExists = await 
   userModel.findOne({ 
@@ -21,7 +21,7 @@ async function registerUser(req, res) {
   const hashedpassword = await bcrypt.hash(password, 10);
 
   const user = await userModel.create({
-    fullName,
+    name,
     email,
     password: hashedpassword
   });
@@ -38,7 +38,7 @@ async function registerUser(req, res) {
     user:{
       id: user._id,
       email: user.email,
-      fullName: user.fullName
+      name: user.name
     }
   }))
   
@@ -77,7 +77,7 @@ async function LoginUser(req, res) {
     user:{
       id: user._id,
       email: user.email,
-      fullName: user.fullName
+      name: user.name
     }
   })
 
