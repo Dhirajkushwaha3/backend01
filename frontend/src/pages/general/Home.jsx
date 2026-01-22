@@ -18,7 +18,7 @@ const Home = () => {
 
         const fetchReels = async () => {
             try {
-                const response = await axios.get('https://backend001-6dig.onrender.com/api/food', {
+                const response = await axios.get('https://food-scroll-iopy.onrender.com/api/food', {
                     withCredentials: true 
                 });
                 

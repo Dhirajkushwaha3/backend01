@@ -15,7 +15,7 @@ const FoodPartnerRegister = ()=>{
     const address = e.target.address.value;
 
     try {
-      const response = await axios.post("https://backend001-6dig.onrender.com/api/auth/food-partner/register", {
+      const response = await axios.post("https://food-scroll-iopy.onrender.com/api/auth/food-partner/register", {
         name,
         contactName,
         phone,

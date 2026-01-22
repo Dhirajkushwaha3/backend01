@@ -66,7 +66,7 @@ const CreateFood = () => {
        console.log(token);
     try {
       const response = await axios.post(
-        'https://backend001-6dig.onrender.com/api/food',
+        'https://food-scroll-iopy.onrender.com/api/food',
         formData,{
           headers: {
             Authorization: `Bearer ${token}`  
