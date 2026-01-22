@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const FoodPartnerLogin = ()=>{
   const navigate = useNavigate();
@@ -54,7 +54,14 @@ const FoodPartnerLogin = ()=>{
           <button className="submit" type="submit">Sign in</button>
 
           <div style={{marginTop:10,fontSize:13,color:'var(--muted)'}}>
-            New partner? <a className="muted-link" href="/food-partner/register">Create account</a>
+            New partner? <Link className="muted-link" href="/food-partner/register"  style={{
+              display: 'inline-block',
+              padding: '10px 1px',
+              color: 'var(--accent)',
+              borderRadius: 'var(--radius-sm)',
+              textDecoration: 'none',
+    
+  }}>Create account</Link>
           </div>
         </form>
       </div>
