@@ -177,6 +177,9 @@ async function LogoutFoodPartner(req, res) {
     sameSite: 'none',
     secure: true
   });
+  res.status(200).json({
+    message: 'Food Partner Logged out successfully'
+  });
 }
 
 

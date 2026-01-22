@@ -1,0 +1,158 @@
+/* Minimal Home page design */
+:root {
+  --bg: #0b0c10;
+  --card: #111318;
+  --border: #1f232b;
+  --text: #e5e7eb;
+  --muted: #9aa3af;
+  --brand: #6ee7b7;
+  --brand-700: #059669;
+}
+
+.home-shell {
+  min-height: 100vh;
+  padding: 24px clamp(16px, 4vw, 48px);
+  background: linear-gradient(180deg, rgba(11,12,16,1) 0%, rgba(15,16,22,1) 100%);
+  color: var(--text);
+}
+
+.home-actions {
+  max-width: 1100px;
+  margin: 0 auto 24px auto;
+}
+
+.home-actions-grid {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(260px, 320px));
+}
+
+.home-actions-grid.one-col {
+  grid-template-columns: minmax(260px, 420px);
+  justify-content: center;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand);
+  margin-bottom: 8px;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 720px) {
+  .home-actions-grid {
+    grid-template-columns: minmax(260px, 1fr);
+  }
+  .home-actions-grid.one-col {
+    grid-template-columns: minmax(240px, 1fr);
+  }
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  border-color: #2a2f3a;
+}
+
+.card h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.card p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Buttons */
+.card button,
+.home-shell .btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #141722;
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.08s ease;
+}
+
+.card button:hover,
+.home-shell .btn:hover {
+  background: #171a27;
+  border-color: #2a2f3a;
+}
+
+.card button:active,
+.home-shell .btn:active {
+  transform: translateY(1px);
+}
+
+/* Link-styled secondary buttons */
+.card .secondary {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+}
+
+.card .secondary:hover {
+  color: var(--text);
+}
+
+/* Error & loading */
+.error-message {
+  max-width: 1100px;
+  margin: 0 auto 16px auto;
+  background: #1a0f12;
+  color: #fecaca;
+  border: 1px solid #7f1d1d;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.loading {
+  max-width: 1100px;
+  margin: 24px auto;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Reels container spacing alignment with the rest of the page */
+#reels.reels-container {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .home-shell {
+    padding: 16px;
+  }
+  .card {
+    padding: 14px;
+  }
+}

@@ -7,6 +7,7 @@ const multer = require('multer');
 
 const upload = multer({
   storage: multer.memoryStorage(),
+  limits: { fileSize: 50 * 1024 * 1024 }
 })
 
 
@@ -15,7 +16,7 @@ const upload = multer({
 /*Post /api/auth/ protected */
 router.post('/', authMidlleware.authFoodPartnerMiddleware, upload.single('video'), foodController.createFood);
 
-/*Get /api/auth/ protected */
+/*Get /api/food protected */
 router.get('/', authMidlleware.authUserMiddleware, foodController.getFoodItems);
 
 router.post('/like', authMidlleware.authUserMiddleware, foodController.likeFood);

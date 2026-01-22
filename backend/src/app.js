@@ -11,7 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-   origin:[ 'http://localhost:5173',
+   origin:[
+      'http://localhost:5173',
+      // TODO: replace with your actual deployed frontend domain
       'https://backend001-frontend.onrender.com'
    ],
    credentials: true,
