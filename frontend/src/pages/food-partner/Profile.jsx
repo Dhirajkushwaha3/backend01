@@ -34,7 +34,7 @@ const Profile = () => {
                         headers
                     });
 
-                const fp = data && data.foodPartner ? data.foodPartner : null;
+                const fp =data && data.foodPartner ? data.foodPartner : null;
                 // Defer setting state to avoid synchronous updates inside effect
                 Promise.resolve().then(() => {
                     setProfileData(fp);

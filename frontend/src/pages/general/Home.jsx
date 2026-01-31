@@ -97,6 +97,10 @@ useEffect(() => {
     return (
         <div className="home-shell">
             {error && <div className="error-message">{error}</div>}
+           
+          
+
+
 
             <section className="home-actions">
                 <div className="home-actions-grid one-col">
@@ -106,8 +110,8 @@ useEffect(() => {
                             <path d="M8 5v14l11-7-11-7z"></path>
                         </svg>
                     </div>
-                    <h3>Watch Reels</h3>
-                    <p>Sign in as a user to watch food reels.</p>
+                    <h3>Food Scroll</h3>
+                    <p>Sign in to watch endless food reels and discover new tastes.</p>
                     <button
                         onClick={() => {
                             if (isAuthed) {
