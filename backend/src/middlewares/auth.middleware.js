@@ -16,7 +16,7 @@ async function authFoodPartnerMiddleware(req, res, next) {
   }
   try {
     const decoded = jwt.verify(token, process.env.secretkey);
-    const foodPartner = await foodPartnerModel.findById({user: decoded.id});
+    const foodPartner = await foodPartnerModel.findOne({user: decoded.id});
     if (!foodPartner) {
       return res.status(404).json({message: 'Food partner not found'});
     }
