@@ -76,7 +76,7 @@ const FoodPartnerRegister = ()=>{
           <button className="submit" type="submit">Create account</button>
 
           <div style={{marginTop:10,fontSize:13,color:'var(--muted)'}}>
-            Already registered? <Link className="muted-link" href="/food-partner/login"   style={{
+            Already registered? <Link className="muted-link" to ="/food-partner/login"   style={{
               display: 'inline-block',
               padding: '10px 1px',
               color: 'var(--accent)',

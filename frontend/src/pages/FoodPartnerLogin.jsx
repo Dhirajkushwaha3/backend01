@@ -54,7 +54,7 @@ const FoodPartnerLogin = ()=>{
           <button className="submit" type="submit">Sign in</button>
 
           <div style={{marginTop:10,fontSize:13,color:'var(--muted)'}}>
-            New partner? <Link className="muted-link" href="/food-partner/register"  style={{
+            New partner? <Link className="muted-link" to ="/food-partner/register"  style={{
               display: 'inline-block',
               padding: '10px 1px',
               color: 'var(--accent)',
