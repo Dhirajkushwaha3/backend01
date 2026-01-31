@@ -55,7 +55,7 @@ const navigate = useNavigate();
           <button className="submit" type="submit">Create account</button>
 
           <div style={{marginTop:10,fontSize:13,color:'var(--muted)'}}>
-            Already have an account? <Link className="muted-link" href="/user/login"   style={{
+            Already have an account? <Link className="muted-link" to ="/user/login" style={{
               display: 'inline-block',
               padding: '10px 1px',
               color: 'var(--accent)',
